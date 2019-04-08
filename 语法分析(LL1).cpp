@@ -649,9 +649,9 @@ void before() {/*在开始运行前对所用文件进行清空重建*/
 	ofstream p11(r11);
 }
 
-int main() {/*主函数，用于读入词法分析完成5得到的单词序列*/
+int main() {/*主函数，用于读入词法分析完成5得到的单词序列*/		//这是整个编译器的主函数调用了包括词法分析在内的所有函数
 	before();
-	char*know = tokenaly();
+	char*know = tokenaly();		//在这里调用了词法分析的tokenaly()函数
 	PSTACK alystack = new STACK;
 	std::fstream outfile(know, ios::out | ios::in);/*打开代码文件*/
 	int i = 0;
@@ -676,7 +676,7 @@ int main() {/*主函数，用于读入词法分析完成5得到的单词序列*/
 		}
 	}
 	TOKEN[i - 1].kind = default;
-	char grammar[] = "grammar.txt";
+	char grammar[] = "grammar.txt";		//这个文件中存储着生成式
 	std::fstream gram(grammar, ios::out | ios::in);/*打开代码文件*/
 	/*cout << "请写出产生式，用=代替箭头,用-进行分隔，#表示结束，例如:E1=w1-T-E1|$-#" << endl;
 	cout << "w1代表+和-，w2代表*和/"<<endl<<endl;*/

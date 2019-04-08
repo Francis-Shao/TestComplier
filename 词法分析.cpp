@@ -263,7 +263,7 @@ static void scanner() {/*词法扫描*/
 	}
 }
 
-char* tokenaly() {
+char* tokenaly() {		//被位于语法分析中的main函数调用，并调用词法分析中的各个函数，相当于词法分析中的主函数
 	system("cls");
 	/*
 	cout << "手动输入现有文件的位置路径:";
