@@ -5,7 +5,7 @@ char str[10000];
 char strc[]="text.cpp";
 char ch;
 char token[25];
-char know[30]="wordsequence.dat";
+char know[30]="wordsequence.dat";		//这个是288行创建词法分析输出的文件文件路径
 enum style{I,C,K,P,Ch,St,def};
 static char *keyword[18] = { "int","float","char","void","if","else","switch","case","for","do","while","continue","break","default","sizeof","return","cout","cin" };/*关键字表*/
 static char *delimiters[18] = { ">=","<=","==","=",">","<","+","-","*","/","{","}",",",";","(",")" ,"[","]"};/*界符表*/
@@ -90,8 +90,8 @@ void addvar(char*cmp) {/*加入变量表*/
 	return;
 }
 
-void prep(char ch) {/*预处理，过滤注释*/
-	int state = 1;
+void prep(char ch) {/*预处理，过滤注释*/	//用于去掉注释函数，可以去掉
+	int state = 1;		//状态变量
 	int cycle = 0;
 	int back;
 	if (ch == '/') {/*出现'/'则准备进行过滤注释*/
@@ -103,7 +103,7 @@ void prep(char ch) {/*预处理，过滤注释*/
 		return;
 	}
 	ch = str[location1++];
-	while (ch != EOF) {
+	while (ch != EOF) {		//这边使用状态机来完成区分//和/**/并去掉注释
 		switch (state) {
 		case 2:
 			if (ch == '*')/*出现'*'则认为已进入注释字段*/
@@ -292,7 +292,7 @@ char* tokenaly() {		//被位于语法分析中的main函数调用，并调用词法分析中的各个函数
 		switch (TOKEN[i].kind)
 		{
 		case P:
-		case K:fout << TOKEN[i].value2<<endl; break;
+		case K:fout << TOKEN[i].value2<<endl; break;	//这边
 		case I:
 		case Ch:
 		case St:
