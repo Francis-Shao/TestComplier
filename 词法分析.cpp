@@ -298,6 +298,9 @@ char* tokenaly() {		//被位于语法分析中的main函数调用，并调用词法分析中的各个函数
 		case St:
 		case C:fout << TOKEN[i].value1<<endl;
 		}
+		/*这边输出到了wordsequence.dat文件，输出为词法序列
+			一个词占两行
+			参照词法分析序列表和text.cpp源代码文件来理解*/
 	}
 	cout << "输出完毕！请按任意键继续进行语法分析";
 	fout.close();
