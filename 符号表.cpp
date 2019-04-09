@@ -368,8 +368,8 @@ void analysistable() {
 	finshanalysis();
 	funcpro(func);
 	tabprint(func);
-	cout << "符号表填写完成，按下任意键以进入中间代码翻译";
+	cout << "符号表填写完成，按下任意键以进入中间代码翻译";		//从这里进入中间代码翻译器(Lr0)
 	getchar();
-	translate1();
+	translate1();		//在这里进入中间代码翻译器(LR0)
 	return;
 }

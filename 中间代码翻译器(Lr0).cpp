@@ -232,6 +232,6 @@ void translate1() {
 	printact();
 	cout << "中间代码翻译完成,按下任意键以进入目标代码生成";
 	getchar();
-	targetcode();
+	targetcode();		//进入了目标代码生成，并在生成的过程中完成了对中间代码的优化
 	return;
 }

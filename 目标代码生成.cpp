@@ -617,7 +617,7 @@ void targetcode() {
 		act >> action[i++].id3;
 	}
 	act.close();
-	actionprep();
+	actionprep();		//在这里对四元式进行了处理，调用了中间代码优化！！
 	symbolprep();
 	targetlanpro();
 	cout << "目标代码完成生成，按下任意键结束编译...";

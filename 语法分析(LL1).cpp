@@ -506,7 +506,7 @@ void gra(PSTACK begin) {/*Óï·¨·ÖÎöÖ÷Ìå³ÌĞò*/
 void tableprint() {
 	cout << "ÓÉ²úÉúÊ½ËùµÃ·ÖÎö±íÈçÏÂ"<<endl;
 	cout << "                 ";
-	char *analysistab = "analysistable.dat";
+	char *analysistab = "analysistable.dat";		//£¿£¿£¿£¿£¿£¡£¡£¡£¿£¿£¿£¿
 	std::fstream selectout(analysistab, ios::out | ios::in);/*´ò¿ª´úÂëÎÄ¼ş*/
 	int i = 0;
 	if (!selectout) {
@@ -732,7 +732,7 @@ int main() {/*Ö÷º¯Êı£¬ÓÃÓÚ¶ÁÈë´Ê·¨·ÖÎöÍê³É5µÃµ½µÄµ¥´ÊĞòÁĞ*/		//ÕâÊÇÕû¸ö±àÒëÆ÷µÄÖ
 	act.close();
 	cout << "½áÊøÔËĞĞ£¬Óï·¨·ÖÎöÎŞ´íÎó,°´ÏÂÈÎÒâ¼üÒÔ½øÈë·ûºÅ±í¹¹½¨";
 	getchar();
-	analysistable();
+	analysistable();	//µ÷ÓÃÁË·ûºÅ±íÖĞµÄanalysistable()º¯Êı£¬¿ªÊ¼¹¹½¨·ÖÎö±í£¬´ÓÕâÀï½øÈë·ûºÅ±í.cpp
 	return 0;
 }
 
