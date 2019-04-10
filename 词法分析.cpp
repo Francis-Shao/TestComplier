@@ -305,5 +305,8 @@ char* tokenaly() {		//被位于语法分析中的main函数调用，并调用词法分析中的各个函数
 	cout << "输出完毕！请按任意键继续进行语法分析";
 	fout.close();
 	getchar();
-	return know;
+	return know;	
+		/*return的是know这个字符串
+			也就是wordsequence.dat
+			相当于将这个文件名传回了语法分析(LL1)*/
 }

@@ -651,7 +651,7 @@ void before() {/*在开始运行前对所用文件进行清空重建*/
 
 int main() {/*主函数，用于读入词法分析完成5得到的单词序列*/		//这是整个编译器的主函数调用了包括词法分析在内的所有函数
 	before();
-	char*know = tokenaly();		//在这里调用了词法分析的tokenaly()函数
+	char*know = tokenaly();		//在这里调用了词法分析的tokenaly()函数，并得到了wordsequence.dat文件的文件名
 
 	/*从这里开始词法分析的部分已经完成
 		生成了wordsequence.dat词法序列
