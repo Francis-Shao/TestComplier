@@ -139,7 +139,7 @@ static void scanner() {/*词法扫描*/
 		token[i] = NULL;/*将单词比较窗口清空*/
 	}
 
-	prep(ch);
+	prep(ch);		//用于处理注释，可以忽略
 	ch = str[location1++];
 
 	while (ch == ' ') {
@@ -202,7 +202,7 @@ static void scanner() {/*词法扫描*/
 				TOKEN[serial].value2 = 5;
 			serial++;
 			break;
-		case'<':
+		case '<':
 			if (str[location1] == '=') {
 				TOKEN[serial].value2 = 2;
 				location1++;
@@ -211,7 +211,7 @@ static void scanner() {/*词法扫描*/
 				TOKEN[serial].value2 = 6;
 			serial++;
 			break;
-		case'=':
+		case '=':
 			if (str[location1] == '=') {
 				TOKEN[serial].value2 = 3;
 				location1++;
@@ -220,19 +220,19 @@ static void scanner() {/*词法扫描*/
 				TOKEN[serial].value2 = 4;
 			serial++;
 			break;
-		case'+':TOKEN[serial++].value2 = 7; break;
-		case'-':TOKEN[serial++].value2 = 8; break;
-		case'*':TOKEN[serial++].value2 = 9; break;
-		case'/':TOKEN[serial++].value2 = 10; break;
-		case'{':TOKEN[serial++].value2 = 11; break;
-		case'}':TOKEN[serial++].value2 = 12; break;
-		case',':TOKEN[serial++].value2 = 13; break;
-		case';':TOKEN[serial++].value2 = 14; break;
-		case'(':TOKEN[serial++].value2 = 15; break;
-		case')':TOKEN[serial++].value2 = 16;  break;
-		case'[':TOKEN[serial++].value2 = 17;  break;
-		case']':TOKEN[serial++].value2 = 18;  break;
-		case'\'': {/*字符获取*/
+		case '+':TOKEN[serial++].value2 = 7; break;
+		case '-':TOKEN[serial++].value2 = 8; break;
+		case '*':TOKEN[serial++].value2 = 9; break;
+		case '/':TOKEN[serial++].value2 = 10; break;
+		case '{':TOKEN[serial++].value2 = 11; break;
+		case '}':TOKEN[serial++].value2 = 12; break;
+		case ',':TOKEN[serial++].value2 = 13; break;
+		case ';':TOKEN[serial++].value2 = 14; break;
+		case '(':TOKEN[serial++].value2 = 15; break;
+		case ')':TOKEN[serial++].value2 = 16;  break;
+		case '[':TOKEN[serial++].value2 = 17;  break;
+		case ']':TOKEN[serial++].value2 = 18;  break;
+		case '\'': {/*字符获取*/
 			TOKEN[serial].kind = Ch;
 			token[i++] = str[location1++];
 			token[i] = '\0';
@@ -243,7 +243,7 @@ static void scanner() {/*词法扫描*/
 				exit(1);
 			}
 		}break;
-		case'"': {/*字符串获取*/
+		case '"': {/*字符串获取*/
 			TOKEN[serial].kind = St;
 			for (; i < 25; ) {
 				if (str[location1] != '"') {
@@ -282,7 +282,7 @@ char* tokenaly() {		//被位于语法分析中的main函数调用，并调用词法分析中的各个函数
 	init_twoele(TOKEN);
 	cout << "程序代码如下：" << endl << str << endl << "分析词法序号如下:" << endl;
 	while (str[location1] != NULL) {
-		scanner();
+		scanner();		//关键函数
 	}
 	printf(TOKEN);
 	char* path = know; // 你要创建文件的路径
