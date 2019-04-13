@@ -717,12 +717,16 @@ int main() {/*Ö÷º¯Êı£¬ÓÃÓÚ¶ÁÈë´Ê·¨·ÖÎöÍê³É5µÃµ½µÄµ¥´ÊĞòÁĞ*/		//ÕâÊÇÕû¸ö±àÒëÆ÷µÄÖ
 	gram.close();
 	outfile.close();
 
-
+	/*Õâ±ßÍê³ÉÁË·ÖÎö±í
+		³õÊ¼»¯·ÖÎö±í³õÊ¼»¯²úÉúÊ½ºóÍê³É·ÖÎö±í*/
 
 	inittable();
 	initproduct();
 	tableend();
 	tableprint();
+
+
+	
 	inistack(alystack);
 	cout << "Óï·¨·ÖÎö¹ı³ÌÈçÏÂ(Ê¹ÓÃLL(1)·ÖÎö·¨):" << endl;
 	gra(alystack);
