@@ -206,6 +206,9 @@ void cyclefirst(int i) {/*查first集合*/
 void follow(int i, int x1,int local);/*提前声明follow函数*/
 
 void first(int x1,int i,int local) {/*求first集合*/
+
+	/*用递归完成first集的构建*/
+
 	if (c[i].itself[0].it == nothing) {
 		follow(i, x1,local);
 		return;
@@ -222,6 +225,9 @@ void first(int x1,int i,int local) {/*求first集合*/
 }
 
 void follow(int i,int x1,int local) {/*求follow集合*/
+
+	/*同样使用递归完成follow集的构建*/
+
 	char cmp[15];
 	for (int i = 0; i < 10; i++) {
 		v[i] = -1;
