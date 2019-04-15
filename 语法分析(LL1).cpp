@@ -280,10 +280,10 @@ void initproduct() {/*³õÊ¼»¯²úÉúÊ½½á¹¹*/
 	return;
 }
 
-void getselect(int n) {/*ÅĞ¶ÏÎªÇófirst»òfollow¼¯ºÏ*/
+void getselect(int n) {/*ÅĞ¶ÏÎªÇófirst»òfollow¼¯ºÏ*/	//ÔÚÕâÀïµ÷ÓÃÁËfirst()º¯Êı
 	for (int i = 0; i < n; i++) {
 		int x1 = tableprep(row, c[i].vn);
-		first(x1,i,i);
+		first(x1,i,i);		//ÔÚfirst()º¯ÊıÖĞµ÷ÓÃÁËfollow()º¯Êı
 	}
 	return;
 }
@@ -726,7 +726,7 @@ int main() {/*Ö÷º¯Êı£¬ÓÃÓÚ¶ÁÈë´Ê·¨·ÖÎöÍê³É5µÃµ½µÄµ¥´ÊĞòÁĞ*/		//ÕâÊÇÕû¸ö±àÒëÆ÷µÄÖ
 	tableprint();
 
 
-	
+
 	inistack(alystack);
 	cout << "Óï·¨·ÖÎö¹ı³ÌÈçÏÂ(Ê¹ÓÃLL(1)·ÖÎö·¨):" << endl;
 	gra(alystack);
