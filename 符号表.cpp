@@ -362,11 +362,11 @@ void analysistable() {
 		}
 	}
 	tok[i - 1].kind = default;
-	initsymbol(environment,100);
-	initlenl(lengt);
-	initvall(firstnode);
-	finshanalysis();
-	funcpro(func);
+	initsymbol(environment,100);	//初始化符号表
+	initlenl(lengt);	//初始化长度表
+	initvall(firstnode);	//初始化活动记录表
+	finshanalysis();	//完成符号表
+	funcpro(func);	//完成活动记录表？？？
 	tabprint(func);
 	cout << "符号表填写完成，按下任意键以进入中间代码翻译";		//从这里进入中间代码翻译器(Lr0)
 	getchar();
