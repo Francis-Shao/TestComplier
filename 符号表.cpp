@@ -362,14 +362,32 @@ void analysistable() {
 		}
 	}
 	tok[i - 1].kind = default;
+
+	/*
+		这里四个步骤
+		完成了符号表、长度表、函数表
+	*/
+
 	initsymbol(environment,100);	//初始化符号表
 	initlenl(lengt);	//初始化长度表
 	initvall(firstnode);	//初始化活动记录表
 	finshanalysis();	//完成符号表
+
+	/*
+		根据前面四个表完成了活动记录表
+	*/
+
 	funcpro(func);	//完成活动记录表？？？
 	tabprint(func);
 	cout << "符号表填写完成，按下任意键以进入中间代码翻译";		//从这里进入中间代码翻译器(Lr0)
 	getchar();
+
+	/*
+		目前的问题在于因为语言思路的不同
+			函数式语言可能不需要一模一样的实现
+				具体的整体实现思路应该先理解中间代码转换(LR0)
+	*/
+
 	translate1();		//在这里进入中间代码翻译器(LR0)
 	return;
 }
